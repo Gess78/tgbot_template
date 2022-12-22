@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  bot:
+    image: tgbot
+    container_name: tgbot
+    stop_signal: SIGINT
+    build: .
+    restart: always
+    env_file:
+      - ".env"
+    command: python3 -m bot
